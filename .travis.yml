@@ -3,4 +3,12 @@ dist: xenial
 sudo: required
 script:
 - bash test.sh
-
+deploy:
+  provider: releases
+  api_key: 
+  	secure: YSefi37uUW321c3Ep3e8SQ
+  file: "hello.sh"
+  skip_cleanup: true
+  on:
+  	repo: berchev/hello_project
+    tags: true
